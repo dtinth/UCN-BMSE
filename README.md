@@ -1,10 +1,14 @@
-BMx Sequence Editor
-===================
+BMx Sequence Editor by [UCN-Soft](http://ucn.tokonats.net/)
+===========================================================
 
-See [this page](http://ucn.tokonats.net/software/bmse/) for information about BMSE.
+See [this page for information about BMSE](http://ucn.tokonats.net/software/bmse/).
 Basically it's an app that lets you edit BMS files.
 It's not actively maintained by the original author since 2008 or something and later they
 decided to release the source code under zlib/libpng license.
+
+
+About this Repository
+---------------------
 
 In this repository you will find the __original__ branch which contains the
 original BMSE 1.3.8 code, and the __dttvb__ branch with my own modifications added.
