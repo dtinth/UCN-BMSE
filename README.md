@@ -11,7 +11,7 @@ About this Repository
 ---------------------
 
 In this repository you will find the __original__ branch which contains the
-original BMSE 1.3.8 code, and the __dttvb__ branch with my own modifications added.
+original BMSE 1.3.8 code, and the __master__ branch with my own modifications added.
 
 
 Changes to 1.3.8
