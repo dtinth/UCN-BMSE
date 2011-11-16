@@ -1,12 +1,11 @@
 Attribute VB_Name = "modMain"
 Option Explicit
 
-#Const MODE_DEBUG = True
+#Const MODE_DEBUG = False
 
 Private Const INI_VERSION = 3
 
-Public Const RELEASEDATE = "2006-12-27T15:46:39"
-
+Public Const RELEASEDATE = "2011-11-16T18:36:00"
 
 
 #Const MODE_SPEEDTEST = False
@@ -203,6 +202,7 @@ Public Type g_udtObj
     intMeasure  As Integer
     lngHeight   As Long
     lngPosition As Long
+    lngTail     As Long
     sngValue    As Single
     intSelect   As Integer
     '0・・・未選択
@@ -311,7 +311,7 @@ Public Sub Main()
     
     End If
     
-    g_strAppTitle = "BMx Sequence Editor " & App.Major & "." & App.Minor & "." & App.Revision
+    g_strAppTitle = "BMx Sequence Editor dttvb-" & App.Major & "." & App.Minor & "." & App.Revision
     
     #If MODE_DEBUG = False Then
     

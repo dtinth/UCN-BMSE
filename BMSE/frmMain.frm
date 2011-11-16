@@ -1,14 +1,14 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT3N.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "ComDlg32.OCX"
 Begin VB.Form frmMain 
    Caption         =   "BMx Sequence Editor"
    ClientHeight    =   7590
    ClientLeft      =   165
-   ClientTop       =   735
+   ClientTop       =   855
    ClientWidth     =   18705
    BeginProperty Font 
-      Name            =   "ＭＳ ゴシック"
+      Name            =   "Lucida Sans Unicode"
       Size            =   9
       Charset         =   128
       Weight          =   400
@@ -19,13 +19,13 @@ Begin VB.Form frmMain
    Icon            =   "frmMain.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
-   OLEDropMode     =   1  '手動
+   OLEDropMode     =   1  'Manual
    ScaleHeight     =   7590
    ScaleWidth      =   18705
-   StartUpPosition =   3  'Windows の既定値
+   StartUpPosition =   3  'Windows Default
    Visible         =   0   'False
    Begin MSComctlLib.StatusBar staMain 
-      Align           =   2  '下揃え
+      Align           =   2  'Align Bottom
       Height          =   315
       Left            =   0
       TabIndex        =   98
@@ -47,7 +47,7 @@ Begin VB.Form frmMain
          EndProperty
          BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             AutoSize        =   1
-            Object.Width           =   25321
+            Object.Width           =   25770
             Text            =   "Position:"
             TextSave        =   "Position:"
             Key             =   "Position"
@@ -85,12 +85,12 @@ Begin VB.Form frmMain
       AutoRedraw      =   -1  'True
       AutoSize        =   -1  'True
       BackColor       =   &H00000000&
-      BorderStyle     =   0  'なし
+      BorderStyle     =   0  'None
       Height          =   3840
       Left            =   17760
       Picture         =   "frmMain.frx":08CA
       ScaleHeight     =   256
-      ScaleMode       =   3  'ﾋﾟｸｾﾙ
+      ScaleMode       =   3  'Pixel
       ScaleWidth      =   64
       TabIndex        =   99
       Top             =   480
@@ -105,16 +105,16 @@ Begin VB.Form frmMain
    End
    Begin VB.Frame fraResolution 
       Height          =   315
-      Left            =   15120
+      Left            =   13800
       TabIndex        =   16
-      Top             =   2640
+      Top             =   1680
       Width           =   1755
       Begin VB.ComboBox cboVScroll 
          Height          =   300
          ItemData        =   "frmMain.frx":294C
          Left            =   720
          List            =   "frmMain.frx":2953
-         Style           =   2  'ﾄﾞﾛｯﾌﾟﾀﾞｳﾝ ﾘｽﾄ
+         Style           =   2  'Dropdown List
          TabIndex        =   18
          Top             =   0
          Width           =   855
@@ -134,13 +134,20 @@ Begin VB.Form frmMain
       Left            =   12120
       TabIndex        =   11
       Top             =   2640
-      Width           =   2955
+      Width           =   5115
+      Begin VB.TextBox txtKeys 
+         Height          =   360
+         Left            =   3240
+         TabIndex        =   100
+         Top             =   0
+         Width           =   1695
+      End
       Begin VB.ComboBox cboDispHeight 
          Height          =   300
          ItemData        =   "frmMain.frx":295A
          Left            =   480
          List            =   "frmMain.frx":298C
-         Style           =   2  'ﾄﾞﾛｯﾌﾟﾀﾞｳﾝ ﾘｽﾄ
+         Style           =   2  'Dropdown List
          TabIndex        =   13
          Top             =   0
          Width           =   855
@@ -150,7 +157,7 @@ Begin VB.Form frmMain
          ItemData        =   "frmMain.frx":29C5
          Left            =   1740
          List            =   "frmMain.frx":29F7
-         Style           =   2  'ﾄﾞﾛｯﾌﾟﾀﾞｳﾝ ﾘｽﾄ
+         Style           =   2  'Dropdown List
          TabIndex        =   15
          Top             =   0
          Width           =   855
@@ -185,7 +192,7 @@ Begin VB.Form frmMain
          ItemData        =   "frmMain.frx":2A30
          Left            =   0
          List            =   "frmMain.frx":2A32
-         Style           =   2  'ﾄﾞﾛｯﾌﾟﾀﾞｳﾝ ﾘｽﾄ
+         Style           =   2  'Dropdown List
          TabIndex        =   5
          Top             =   0
          Width           =   1335
@@ -281,7 +288,7 @@ Begin VB.Form frmMain
          ItemData        =   "frmMain.frx":67D2
          Left            =   1920
          List            =   "frmMain.frx":67F0
-         Style           =   2  'ﾄﾞﾛｯﾌﾟﾀﾞｳﾝ ﾘｽﾄ
+         Style           =   2  'Dropdown List
          TabIndex        =   10
          Top             =   0
          Width           =   855
@@ -291,7 +298,7 @@ Begin VB.Form frmMain
          ItemData        =   "frmMain.frx":6811
          Left            =   480
          List            =   "frmMain.frx":683C
-         Style           =   2  'ﾄﾞﾛｯﾌﾟﾀﾞｳﾝ ﾘｽﾄ
+         Style           =   2  'Dropdown List
          TabIndex        =   8
          Top             =   0
          Width           =   855
@@ -331,11 +338,11 @@ Begin VB.Form frmMain
          Width           =   3255
          Begin VB.ComboBox cboPlayer 
             Height          =   300
-            IMEMode         =   3  'ｵﾌ固定
+            IMEMode         =   3  'DISABLE
             ItemData        =   "frmMain.frx":686A
             Left            =   1200
             List            =   "frmMain.frx":686C
-            Style           =   2  'ﾄﾞﾛｯﾌﾟﾀﾞｳﾝ ﾘｽﾄ
+            Style           =   2  'Dropdown List
             TabIndex        =   25
             Top             =   120
             Width           =   1995
@@ -363,7 +370,7 @@ Begin VB.Form frmMain
          End
          Begin VB.ComboBox cboPlayLevel 
             Height          =   300
-            IMEMode         =   3  'ｵﾌ固定
+            IMEMode         =   3  'DISABLE
             ItemData        =   "frmMain.frx":686E
             Left            =   1200
             List            =   "frmMain.frx":688D
@@ -373,7 +380,7 @@ Begin VB.Form frmMain
          End
          Begin VB.TextBox txtBPM 
             Height          =   270
-            IMEMode         =   3  'ｵﾌ固定
+            IMEMode         =   3  'DISABLE
             Left            =   2580
             TabIndex        =   35
             Text            =   "130"
@@ -381,7 +388,7 @@ Begin VB.Form frmMain
             Width           =   615
          End
          Begin VB.Label lblPlayMode 
-            Alignment       =   1  '右揃え
+            Alignment       =   1  'Right Justify
             AutoSize        =   -1  'True
             Caption         =   "プレイモード"
             Height          =   180
@@ -391,7 +398,7 @@ Begin VB.Form frmMain
             Width           =   1080
          End
          Begin VB.Label lblGenre 
-            Alignment       =   1  '右揃え
+            Alignment       =   1  'Right Justify
             AutoSize        =   -1  'True
             Caption         =   "ジャンル"
             Height          =   180
@@ -401,7 +408,7 @@ Begin VB.Form frmMain
             Width           =   720
          End
          Begin VB.Label lblTitle 
-            Alignment       =   1  '右揃え
+            Alignment       =   1  'Right Justify
             AutoSize        =   -1  'True
             Caption         =   "タイトル"
             Height          =   180
@@ -411,7 +418,7 @@ Begin VB.Form frmMain
             Width           =   720
          End
          Begin VB.Label lblArtist 
-            Alignment       =   1  '右揃え
+            Alignment       =   1  'Right Justify
             AutoSize        =   -1  'True
             Caption         =   "アーティスト"
             Height          =   180
@@ -421,7 +428,7 @@ Begin VB.Form frmMain
             Width           =   1080
          End
          Begin VB.Label lblPlayLevel 
-            Alignment       =   1  '右揃え
+            Alignment       =   1  'Right Justify
             AutoSize        =   -1  'True
             Caption         =   "難易度表示"
             Height          =   180
@@ -431,7 +438,7 @@ Begin VB.Form frmMain
             Width           =   900
          End
          Begin VB.Label lblBPM 
-            Alignment       =   1  '右揃え
+            Alignment       =   1  'Right Justify
             AutoSize        =   -1  'True
             Caption         =   "BPM"
             Height          =   180
@@ -451,18 +458,18 @@ Begin VB.Form frmMain
          Width           =   3255
          Begin VB.ComboBox cboPlayRank 
             Height          =   300
-            IMEMode         =   3  'ｵﾌ固定
+            IMEMode         =   3  'DISABLE
             ItemData        =   "frmMain.frx":68AC
             Left            =   1200
             List            =   "frmMain.frx":68BC
-            Style           =   2  'ﾄﾞﾛｯﾌﾟﾀﾞｳﾝ ﾘｽﾄ
+            Style           =   2  'Dropdown List
             TabIndex        =   38
             Top             =   120
             Width           =   1995
          End
          Begin VB.TextBox txtTotal 
             Height          =   270
-            IMEMode         =   3  'ｵﾌ固定
+            IMEMode         =   3  'DISABLE
             Left            =   1200
             TabIndex        =   40
             Top             =   480
@@ -470,7 +477,7 @@ Begin VB.Form frmMain
          End
          Begin VB.TextBox txtVolume 
             Height          =   270
-            IMEMode         =   3  'ｵﾌ固定
+            IMEMode         =   3  'DISABLE
             Left            =   1200
             TabIndex        =   42
             Top             =   840
@@ -507,7 +514,7 @@ Begin VB.Form frmMain
             Width           =   1395
          End
          Begin VB.Label lblPlayRank 
-            Alignment       =   1  '右揃え
+            Alignment       =   1  'Right Justify
             AutoSize        =   -1  'True
             Caption         =   "#RANK"
             Height          =   180
@@ -517,7 +524,7 @@ Begin VB.Form frmMain
             Width           =   450
          End
          Begin VB.Label lblTotal 
-            Alignment       =   1  '右揃え
+            Alignment       =   1  'Right Justify
             AutoSize        =   -1  'True
             Caption         =   "#TOTAL"
             Height          =   180
@@ -527,7 +534,7 @@ Begin VB.Form frmMain
             Width           =   540
          End
          Begin VB.Label lblVolume 
-            Alignment       =   1  '右揃え
+            Alignment       =   1  'Right Justify
             AutoSize        =   -1  'True
             Caption         =   "#VOLWAV"
             Height          =   180
@@ -537,7 +544,7 @@ Begin VB.Form frmMain
             Width           =   630
          End
          Begin VB.Label lblStageFile 
-            Alignment       =   1  '右揃え
+            Alignment       =   1  'Right Justify
             AutoSize        =   -1  'True
             Caption         =   "#STAGEFILE"
             Height          =   180
@@ -547,7 +554,7 @@ Begin VB.Form frmMain
             Width           =   900
          End
          Begin VB.Label lblMissBMP 
-            Alignment       =   1  '右揃え
+            Alignment       =   1  'Right Justify
             AutoSize        =   -1  'True
             Caption         =   "#BMP00"
             Height          =   180
@@ -567,50 +574,50 @@ Begin VB.Form frmMain
          Width           =   3255
          Begin VB.ComboBox cboDispFrame 
             Height          =   300
-            IMEMode         =   3  'ｵﾌ固定
+            IMEMode         =   3  'DISABLE
             ItemData        =   "frmMain.frx":68DF
             Left            =   1200
             List            =   "frmMain.frx":68E9
-            Style           =   2  'ﾄﾞﾛｯﾌﾟﾀﾞｳﾝ ﾘｽﾄ
+            Style           =   2  'Dropdown List
             TabIndex        =   51
             Top             =   120
             Width           =   1995
          End
          Begin VB.ComboBox cboDispSC2P 
             Height          =   300
-            IMEMode         =   3  'ｵﾌ固定
+            IMEMode         =   3  'DISABLE
             ItemData        =   "frmMain.frx":6901
             Left            =   2460
             List            =   "frmMain.frx":690B
-            Style           =   2  'ﾄﾞﾛｯﾌﾟﾀﾞｳﾝ ﾘｽﾄ
+            Style           =   2  'Dropdown List
             TabIndex        =   57
             Top             =   840
             Width           =   735
          End
          Begin VB.ComboBox cboDispSC1P 
             Height          =   300
-            IMEMode         =   3  'ｵﾌ固定
+            IMEMode         =   3  'DISABLE
             ItemData        =   "frmMain.frx":6917
             Left            =   1200
             List            =   "frmMain.frx":6921
-            Style           =   2  'ﾄﾞﾛｯﾌﾟﾀﾞｳﾝ ﾘｽﾄ
+            Style           =   2  'Dropdown List
             TabIndex        =   55
             Top             =   840
             Width           =   735
          End
          Begin VB.ComboBox cboDispKey 
             Height          =   300
-            IMEMode         =   3  'ｵﾌ固定
+            IMEMode         =   3  'DISABLE
             ItemData        =   "frmMain.frx":692D
             Left            =   1200
             List            =   "frmMain.frx":6937
-            Style           =   2  'ﾄﾞﾛｯﾌﾟﾀﾞｳﾝ ﾘｽﾄ
+            Style           =   2  'Dropdown List
             TabIndex        =   53
             Top             =   480
             Width           =   1995
          End
          Begin VB.Label lblDispFrame 
-            Alignment       =   1  '右揃え
+            Alignment       =   1  'Right Justify
             AutoSize        =   -1  'True
             Caption         =   "キー表示"
             Height          =   180
@@ -620,7 +627,7 @@ Begin VB.Form frmMain
             Width           =   720
          End
          Begin VB.Label lblDispSC2P 
-            Alignment       =   1  '右揃え
+            Alignment       =   1  'Right Justify
             AutoSize        =   -1  'True
             Caption         =   "2P"
             Height          =   180
@@ -630,7 +637,7 @@ Begin VB.Form frmMain
             Width           =   180
          End
          Begin VB.Label lblDispSC1P 
-            Alignment       =   1  '右揃え
+            Alignment       =   1  'Right Justify
             AutoSize        =   -1  'True
             Caption         =   "スクラッチ1P"
             Height          =   180
@@ -640,7 +647,7 @@ Begin VB.Form frmMain
             Width           =   1080
          End
          Begin VB.Label lblDispKey 
-            Alignment       =   1  '右揃え
+            Alignment       =   1  'Right Justify
             AutoSize        =   -1  'True
             Caption         =   "キー配置"
             Height          =   180
@@ -655,7 +662,7 @@ Begin VB.Form frmMain
          Height          =   315
          Index           =   0
          Left            =   0
-         Style           =   1  'ｸﾞﾗﾌｨｯｸｽ
+         Style           =   1  'Graphical
          TabIndex        =   20
          Top             =   0
          Width           =   915
@@ -665,7 +672,7 @@ Begin VB.Form frmMain
          Height          =   315
          Index           =   2
          Left            =   1950
-         Style           =   1  'ｸﾞﾗﾌｨｯｸｽ
+         Style           =   1  'Graphical
          TabIndex        =   22
          Top             =   0
          Width           =   915
@@ -675,7 +682,7 @@ Begin VB.Form frmMain
          Height          =   315
          Index           =   1
          Left            =   975
-         Style           =   1  'ｸﾞﾗﾌｨｯｸｽ
+         Style           =   1  'Graphical
          TabIndex        =   21
          Top             =   0
          Width           =   915
@@ -692,7 +699,7 @@ Begin VB.Form frmMain
          Height          =   315
          Index           =   0
          Left            =   0
-         Style           =   1  'ｸﾞﾗﾌｨｯｸｽ
+         Style           =   1  'Graphical
          TabIndex        =   59
          Top             =   0
          Width           =   915
@@ -702,7 +709,7 @@ Begin VB.Form frmMain
          Height          =   315
          Index           =   1
          Left            =   975
-         Style           =   1  'ｸﾞﾗﾌｨｯｸｽ
+         Style           =   1  'Graphical
          TabIndex        =   60
          Top             =   0
          Width           =   915
@@ -712,7 +719,7 @@ Begin VB.Form frmMain
          Height          =   315
          Index           =   2
          Left            =   1950
-         Style           =   1  'ｸﾞﾗﾌｨｯｸｽ
+         Style           =   1  'Graphical
          TabIndex        =   61
          Top             =   0
          Width           =   915
@@ -722,7 +729,7 @@ Begin VB.Form frmMain
          Height          =   315
          Index           =   3
          Left            =   0
-         Style           =   1  'ｸﾞﾗﾌｨｯｸｽ
+         Style           =   1  'Graphical
          TabIndex        =   62
          Top             =   375
          Width           =   915
@@ -732,7 +739,7 @@ Begin VB.Form frmMain
          Height          =   315
          Index           =   4
          Left            =   975
-         Style           =   1  'ｸﾞﾗﾌｨｯｸｽ
+         Style           =   1  'Graphical
          TabIndex        =   63
          Top             =   375
          Width           =   915
@@ -749,7 +756,7 @@ Begin VB.Form frmMain
             Height          =   3255
             Left            =   0
             MultiLine       =   -1  'True
-            ScrollBars      =   3  '両方
+            ScrollBars      =   3  'Both
             TabIndex        =   94
             Top             =   120
             Width           =   3195
@@ -806,7 +813,7 @@ Begin VB.Form frmMain
          Begin VB.ListBox lstWAV 
             Height          =   2220
             Left            =   0
-            OLEDropMode     =   1  '手動
+            OLEDropMode     =   1  'Manual
             TabIndex        =   65
             Top             =   120
             Width           =   3195
@@ -837,9 +844,9 @@ Begin VB.Form frmMain
             Width           =   315
          End
          Begin VB.ListBox lstBMP 
-            Height          =   2580
+            Height          =   2460
             Left            =   0
-            OLEDropMode     =   1  '手動
+            OLEDropMode     =   1  'Manual
             TabIndex        =   72
             Top             =   120
             Width           =   3195
@@ -943,7 +950,7 @@ Begin VB.Form frmMain
          Begin VB.ComboBox cboNumerator 
             Height          =   300
             Left            =   1125
-            Style           =   2  'ﾄﾞﾛｯﾌﾟﾀﾞｳﾝ ﾘｽﾄ
+            Style           =   2  'Dropdown List
             TabIndex        =   89
             Top             =   3060
             Width           =   615
@@ -953,7 +960,7 @@ Begin VB.Form frmMain
             ItemData        =   "frmMain.frx":6957
             Left            =   1905
             List            =   "frmMain.frx":696D
-            Style           =   2  'ﾄﾞﾛｯﾌﾟﾀﾞｳﾝ ﾘｽﾄ
+            Style           =   2  'Dropdown List
             TabIndex        =   91
             Top             =   3060
             Width           =   615
@@ -975,9 +982,9 @@ Begin VB.Form frmMain
             Width           =   615
          End
          Begin VB.ListBox lstMeasureLen 
-            Height          =   2580
+            Height          =   2460
             Left            =   0
-            MultiSelect     =   2  '拡張
+            MultiSelect     =   2  'Extended
             TabIndex        =   87
             Top             =   120
             Width           =   3195
@@ -994,13 +1001,13 @@ Begin VB.Form frmMain
    End
    Begin VB.PictureBox picMain 
       BackColor       =   &H00000000&
-      BorderStyle     =   0  'なし
+      BorderStyle     =   0  'None
       FillColor       =   &H00FFFFFF&
-      FillStyle       =   0  '塗りつぶし
+      FillStyle       =   0  'Solid
       BeginProperty Font 
-         Name            =   "ＭＳ ゴシック"
+         Name            =   "Tahoma"
          Size            =   9
-         Charset         =   128
+         Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
@@ -1008,11 +1015,11 @@ Begin VB.Form frmMain
       EndProperty
       ForeColor       =   &H00C0C0C0&
       Height          =   495
-      IMEMode         =   3  'ｵﾌ固定
+      IMEMode         =   3  'DISABLE
       Left            =   0
-      OLEDropMode     =   1  '手動
+      OLEDropMode     =   1  'Manual
       ScaleHeight     =   33
-      ScaleMode       =   3  'ﾋﾟｸｾﾙ
+      ScaleMode       =   3  'Pixel
       ScaleWidth      =   57
       TabIndex        =   0
       TabStop         =   0   'False
@@ -1051,7 +1058,7 @@ Begin VB.Form frmMain
       Filter          =   "BMS ﾌｧｲﾙ (*.bms,*.bme,*.bml)|*.bms;*.bme;*.bml"
    End
    Begin MSComctlLib.Toolbar tlbMenu 
-      Align           =   1  '上揃え
+      Align           =   1  'Align Top
       Height          =   420
       Left            =   0
       TabIndex        =   3
@@ -3639,7 +3646,8 @@ On Error Resume Next
             cboDispHeight.Left = lblDispHeight.Left + lblDispHeight.Width + PADDING
             lblDispWidth.Left = cboDispHeight.Left + cboDispHeight.Width + PADDING * 3
             cboDispWidth.Left = lblDispWidth.Left + lblDispWidth.Width + PADDING
-            fraDispSize.Width = cboDispWidth.Left + cboDispWidth.Width + PADDING
+            txtKeys.Left = cboDispWidth.Left + cboDispWidth.Width + PADDING
+            fraDispSize.Width = txtKeys.Left + txtKeys.Width + PADDING
             .Width = fraDispSize.Width
             Call fraDispSize.Move(.Left, .Top + PADDING, .Width)
             Call fraDispSize.ZOrder(0)
@@ -6556,6 +6564,7 @@ Private Sub picMain_MouseUp(Button As Integer, Shift As Integer, X As Single, Y 
 On Error GoTo Err:
 
     Dim i           As Long
+    Dim j           As Long
     Dim lngRet      As Long
     Dim strRet      As String
     Dim lngArg      As Long
@@ -6655,6 +6664,9 @@ On Error GoTo Err:
                         .intAtt = 2
                 
                 End Select
+                
+                ' change the object into something else, if defined
+                DtTransformObject UBound(g_Obj)
                 
                 If .sngValue = 0 Then Exit Sub
                 
@@ -6814,6 +6826,191 @@ On Error GoTo Err:
 Err:
     Call modMain.CleanUp(Err.Number, Err.Description, "picMain_MouseUp")
 End Sub
+
+Private Sub DtTransformObject(lngObjectID As Long)
+
+    Dim lngBestObject As Long
+    Dim intBestRank As Integer
+    Dim intRank As Integer
+    Dim intID As Integer
+    Dim intExpect As Integer
+    Dim sngBestValue As Single
+    Dim sngValue As Single
+    Dim i As Long
+    Dim j As Integer
+    
+    lngBestObject = -1
+    intBestRank = 32767
+    
+    With g_Obj(lngObjectID)
+        
+        If .intCh < 11 Then Exit Sub
+        If .intCh > 29 Then Exit Sub
+        
+        If .sngValue <> 1260 Then Exit Sub
+        
+        ' it is a long note!
+        If DtTransformLongnote(lngObjectID) Then Exit Sub
+        
+        ' find matching autokeysound
+        For i = UBound(g_Obj) - 1 To 0 Step -1
+        
+            If i <> lngObjectID Then
+                    
+                If g_Obj(i).intMeasure = .intMeasure And g_Obj(i).lngPosition = .lngPosition Then
+                    If g_Obj(i).intCh >= 101 Then
+                    
+                        ' find its rank
+                        For j = 1 To Len(txtKeys.Text)
+                            intID = Asc(Mid(txtKeys.Text, j, 1))
+                            intExpect = -1
+                            If intID >= 49 And intID <= 57 Then
+                                intExpect = 101 + intID - 49
+                            ElseIf intID >= 65 And intID <= 90 Then
+                                intExpect = 110 + intID - 65
+                            ElseIf intID >= 97 And intID <= 122 Then
+                                intExpect = 110 + intID - 97
+                            End If
+                            
+                            If g_Obj(i).intCh = intExpect Then
+                            
+                                sngValue = g_Obj(i).intCh - 101 + 1261
+                                
+                                ' update best rank
+                                If j < intBestRank Then
+                                    If Not DtGetNoteByValue(.intMeasure, .lngPosition, sngValue, lngObjectID) Then
+                                        lngBestObject = i
+                                        intBestRank = j
+                                        sngBestValue = sngValue
+                                    End If
+                                End If
+                                
+                                Exit For
+                            End If
+                        Next
+                    
+                    End If
+                End If
+            
+            End If
+            
+        Next
+        
+        If lngBestObject > -1 Then
+            .sngValue = sngBestValue
+        End If
+
+    End With
+
+End Sub
+
+Private Function DtTransformLongnote(ByVal lngObjectID As Long) As Boolean
+
+    Dim i As Long
+    Dim lngPreviousLongnotes As Long
+    Dim lngMaxIndex As Long
+    
+    lngPreviousLongnotes = 0
+    lngMaxIndex = -1
+    
+    With g_Obj(lngObjectID)
+    
+        For i = 0 To UBound(g_Obj)
+        
+            If i <> lngObjectID And g_Obj(i).intCh = .intCh And g_Obj(i).intAtt = 2 Then
+                If g_Obj(i).intMeasure < .intMeasure Or (g_Obj(i).intMeasure = .intMeasure And g_Obj(i).lngPosition < .lngPosition) Then
+                    
+                    lngPreviousLongnotes = lngPreviousLongnotes + 1
+                    
+                    If lngMaxIndex = -1 Then
+                        lngMaxIndex = i
+                    ElseIf g_Obj(i).intMeasure > g_Obj(lngMaxIndex).intMeasure Or (g_Obj(i).intMeasure = g_Obj(lngMaxIndex).intMeasure And g_Obj(i).lngPosition > g_Obj(lngMaxIndex).lngPosition) Then
+                        lngMaxIndex = i
+                    End If
+                    
+                End If
+            End If
+        
+        Next
+        
+        If lngPreviousLongnotes > 0 And lngPreviousLongnotes Mod 2 = 1 Then
+            
+            .sngValue = g_Obj(lngMaxIndex).sngValue
+            
+            DtTransformLongnote = True
+            Exit Function
+            
+        End If
+        
+    End With
+    
+    DtTransformLongnote = False
+
+End Function
+
+Private Function DtGetNoteByValue(ByVal intMeasure As Integer, ByVal lngPosition As Long, ByVal sngValue As Single, ByVal lngSkip As Integer) As Boolean
+
+    Dim i As Long
+
+    For i = UBound(g_Obj) - 1 To 0 Step -1
+    
+        If i <> lngSkip Then
+        
+            If g_Obj(i).intMeasure = intMeasure And g_Obj(i).lngPosition = lngPosition And g_Obj(i).sngValue = sngValue Then
+                
+                If g_Obj(i).intAtt = 2 Then
+                    If DtIsLongNoteTail(i) Then
+                        DtGetNoteByValue = False
+                        Exit Function
+                    End If
+                End If
+                
+                DtGetNoteByValue = True
+                Exit Function
+                
+            End If
+        
+        End If
+    
+    Next
+
+    DtGetNoteByValue = False
+
+End Function
+
+Private Function DtIsLongNoteTail(ByVal lngObjectID As Long) As Boolean
+
+    Dim i As Long
+    Dim lngPreviousLongnotes As Long
+    
+    lngPreviousLongnotes = 0
+    
+    With g_Obj(lngObjectID)
+    
+        For i = 0 To UBound(g_Obj)
+        
+            If i <> lngObjectID And g_Obj(i).intCh = .intCh And g_Obj(i).intAtt = 2 Then
+                If g_Obj(i).intMeasure < .intMeasure Or (g_Obj(i).intMeasure = .intMeasure And g_Obj(i).lngPosition < .lngPosition) Then
+                    
+                    lngPreviousLongnotes = lngPreviousLongnotes + 1
+                    
+                End If
+            End If
+        
+        Next
+        
+        If lngPreviousLongnotes > 0 And lngPreviousLongnotes Mod 2 = 1 Then
+            
+            DtIsLongNoteTail = True
+            Exit Function
+            
+        End If
+        
+    End With
+    
+    DtIsLongNoteTail = False
+
+End Function
 
 Public Sub picMain_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
 On Error GoTo Err:

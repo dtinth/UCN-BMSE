@@ -533,7 +533,10 @@ On Error GoTo Err:
 
     Dim i           As Long
     Dim lngRet      As Long
+    Dim sMessage    As String
     'Dim lngTimer    As Long
+    
+    sMessage = "[0]"
     
     'lngTimer = timeGetTime()
     
@@ -737,7 +740,14 @@ On Error GoTo Err:
     
         With g_Obj(i)
         
-            If .intCh > 0 And .intCh < 133 Then
+            If .intAtt = 2 And .intCh >= 11 And .intCh <= 29 Then
+            
+                Call modDraw.CopyObj(m_retObj(UBound(m_retObj)), g_Obj(i))
+                m_retObj(UBound(m_retObj)).intCh = .intCh + 40
+                
+                ReDim Preserve m_retObj(UBound(m_retObj) + 1)
+                
+            ElseIf .intCh > 0 And .intCh < 133 Then
             
                 If g_VGrid(g_intVGridNum(.intCh)).blnDraw Then
                 
@@ -755,11 +765,56 @@ On Error GoTo Err:
     
     Next i
     
+    Call QuickSortLN(0, UBound(m_retObj) - 1)
+    
+    Dim headIndex(0 To 133) As Long
+    
+    For i = 0 To 133
+    
+        headIndex(i) = -1
+    
+    Next
+    
+    For i = 0 To UBound(m_retObj) - 1
+    
+        With m_retObj(i)
+            
+            .lngTail = 0
+            
+            If headIndex(.intCh) = -1 Then
+                headIndex(.intCh) = i
+            Else
+                m_retObj(headIndex(.intCh)).lngTail = g_Measure(.intMeasure).lngY + .lngPosition
+                headIndex(.intCh) = -1
+            End If
+        
+        End With
+    
+    Next i
+    
+    Dim viewStart As Long, viewEnd As Long
+    
     For i = 0 To UBound(m_retObj) - 1
     
         With m_retObj(i)
         
-            If g_disp.lngStartPos <= g_Measure(.intMeasure).lngY + .lngPosition And g_disp.lngEndPos >= g_Measure(.intMeasure).lngY + .lngPosition And g_VGrid(g_intVGridNum(.intCh)).blnDraw = True And .intCh <> 0 Then
+            ' g_disp.lngStartPos <= g_Measure(.intMeasure).lngY + .lngPosition <= g_disp.lngEndPos
+            viewStart = g_Measure(.intMeasure).lngY + .lngPosition
+            viewEnd = viewStart + OBJ_HEIGHT
+            
+            If .lngTail > 0 Then
+                viewEnd = .lngTail + OBJ_HEIGHT
+            End If
+            
+            If g_disp.lngStartPos > viewStart Then
+                viewStart = g_disp.lngStartPos
+            End If
+            
+            If g_disp.lngEndPos < viewEnd Then
+                viewEnd = g_disp.lngEndPos
+            End If
+        
+            If viewStart <= viewEnd And g_VGrid(g_intVGridNum(.intCh)).blnDraw = True And .intCh <> 0 Then
             
                 Call DrawObj(m_retObj(i))
             
@@ -800,9 +855,64 @@ On Error GoTo Err:
     Exit Sub
 
 Err:
-    Call modMain.CleanUp(Err.Number, Err.Description, "Redraw")
+    Call modMain.CleanUp(Err.Number, Err.Description, "Redraw " & sMessage)
 End Sub
 
+Public Sub QuickSortLN(ByVal lngLeft As Long, ByVal lngRight As Long)
+
+    Dim i   As Long
+    Dim j   As Long
+
+    If lngLeft >= lngRight Then Exit Sub
+    
+    i = lngLeft + 1
+    j = lngRight
+    
+    Do While i <= j
+    
+        Do While i <= j
+        
+            If g_Measure(m_retObj(i).intMeasure).lngY + m_retObj(i).lngPosition > g_Measure(m_retObj(lngLeft).intMeasure).lngY + m_retObj(lngLeft).lngPosition Then
+                Exit Do
+            End If
+            
+            i = i + 1
+        Loop
+        
+        Do While i <= j
+        
+            If g_Measure(m_retObj(j).intMeasure).lngY + m_retObj(j).lngPosition < g_Measure(m_retObj(lngLeft).intMeasure).lngY + m_retObj(lngLeft).lngPosition Then
+                Exit Do
+            End If
+            
+            j = j - 1
+        
+        Loop
+
+        If i >= j Then Exit Do
+
+        Call SwapLNObj(j, i)
+
+        i = i + 1
+        j = j - 1
+    
+    Loop
+
+    Call SwapLNObj(j, lngLeft)
+    Call QuickSortLN(lngLeft, j - 1)
+    Call QuickSortLN(j + 1, lngRight)
+
+End Sub
+
+Public Sub SwapLNObj(ByVal Obj1Num As Long, ByVal Obj2Num As Long)
+
+    Dim dummyObj    As g_udtObj
+    
+    Call modDraw.CopyObj(dummyObj, m_retObj(Obj1Num))
+    Call modDraw.CopyObj(m_retObj(Obj1Num), m_retObj(Obj2Num))
+    Call modDraw.CopyObj(m_retObj(Obj2Num), dummyObj)
+
+End Sub
 Private Sub DrawGridBG()
 
     Dim i           As Long
@@ -1215,18 +1325,7 @@ On Error GoTo Err:
                     Width = Width - 6
                 
                 End If
-                
-                If .intAtt = 2 And .intCh >= 11 And .intCh <= 29 Then
-                
-                    Call modDraw.CopyObj(m_retObj(UBound(m_retObj)), retObj)
-                    m_retObj(UBound(m_retObj)).intCh = .intCh + 40
-                    
-                    ReDim Preserve m_retObj(UBound(m_retObj) + 1)
-                    
-                    'Exit Sub
-                
-                End If
-        
+                        
         End Select
     
         Select Case .intSelect
@@ -1346,11 +1445,15 @@ On Error GoTo Err:
         End Select
     
     End With
-    
+        
     With frmMain.picMain
     
         hOldBrush = SelectObject(.hdc, m_hBrush(intBrushNum))
         hOldPen = SelectObject(.hdc, m_hPen(intLightNum))
+        
+        If retObj.lngTail > 0 Then
+            Call Rectangle(.hdc, X + 2, .ScaleHeight + OBJ_DIFF - (retObj.lngTail - g_disp.Y) * g_disp.Height - 1, X + Width - 2, Y + 1)
+        End If
         
         Call Rectangle(.hdc, X, Y - OBJ_HEIGHT, X + Width, Y + 1)
         
@@ -1380,10 +1483,21 @@ On Error GoTo Err:
         
         Else
         
-            Call SetTextColor(.hdc, &H0)
-            Call TextOut(.hdc, X + 3, Y, Text, intRet)
-            Call SetTextColor(.hdc, &HFFFFFF)
-            Call TextOut(.hdc, X + 2, Y, Text, intRet)
+            If retObj.sngValue <> 1260 Then
+                
+                Call SetTextColor(.hdc, &H0)
+                Call TextOut(.hdc, X + 3, Y, Text, intRet)
+                Call SetTextColor(.hdc, &HFFFFFF)
+                Call TextOut(.hdc, X + 2, Y, Text, intRet)
+                
+            Else
+                
+                Call SetTextColor(.hdc, &HFFFFFF)
+                Call TextOut(.hdc, X + 3, Y, Text, intRet)
+                Call SetTextColor(.hdc, &HFF)
+                Call TextOut(.hdc, X + 2, Y, Text, intRet)
+                
+            End If
         
         End If
     
