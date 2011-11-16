@@ -24,11 +24,11 @@ Changes to 1.3.8
 Download
 --------
 
-My modified version of BMSE is in [BMSE-dttvb.exe](https://github.com/dtinth/UCN-BMSE/blob/master/BMSE-dttvb.exe?raw=true).
+My modified version of BMSE is in [__BMSE-dttvb.exe__](https://github.com/dtinth/UCN-BMSE/blob/master/BMSE-dttvb.exe?raw=true).
 You can use it in place of the original BMSE application, because only the program file is changed.
 
 You can also get the additional themes (theDtTvB-*.ini) that I put into it in the
-[BMSE/theme](https://github.com/dtinth/UCN-BMSE/tree/dttvb/BMSE/theme) folder.
+[BMSE/theme](https://github.com/dtinth/UCN-BMSE/tree/master/BMSE/theme) folder.
 
 
 
@@ -46,7 +46,7 @@ and the files are shared to the development VM using VirtualBox's shared folders
 License
 -------
 
-[zlib/libpng LICENSE](https://github.com/dtinth/UCN-BMSE/blob/dttvb/BMSE/LICENSE)
+[zlib/libpng LICENSE](https://github.com/dtinth/UCN-BMSE/blob/master/BMSE/LICENSE)
 
 
 
