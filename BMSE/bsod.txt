@@ -1,0 +1,84 @@
+A problem has been detected and windows has been shut down to prevent damage
+to your computer.
+
+The problem seems to be caused by the following file: SPCMDCON.SYS
+
+PAGE_FAULT_IN_NONPAGED_AREA
+
+If this is the first time you've seen this stop error screen,
+restart your computer. If this screen appears again, follow
+these steps:
+
+Check to make sure any new hardware or software is properly installed.
+If this is a new installation, ask your hardware or software manufacturer
+for any windows updates you might need.
+
+If problems continue, disable or remove any newly installed hardware
+or software. Disable BIOS memory options such as caching or shadowing.
+If you need to use Safe Mode to remove or disable components, restart
+your computer, press F8 to select Adavanced Startup Options, and then
+select Safe Mode.
+
+Technical information:
+
+*** STOP: 0x00000050 (0xDF3094CC2,0x00000001,0xFBFE7617,0x00000000)
+
+
+***  SPCMDCON.SYS - Address FVFE7617 base at FBFE5000, DateStamp 3d6dd67c
+
+
+
+
+
+
+A problem has been detected and BMSE has been shut down to prevent damage to your mind.
+
+The problem seems to be caused by the following file: BMSE.EXE
+
+EASTER_EGG_BLUE_SCREEN_OF_DEATH
+
+If this is the first time you've seen this stop error screen, restart your BMSE. If this screen appears again, follow these steps:
+
+1) Bury me from your computer.
+2) Access UCN-Soft BBS, and write your shout of spirit.
+       ex) "BMSE is the worst software in the world!!!!!!!!!!!!!!111111"
+3) Sing "asdf song":
+       This is the sound of the asdf song.
+       ASDF FDSA
+       ASDFFDSA ye-ye
+       (clap clap clap)
+4) Throw your computer from window.
+
+If you are satiated with joke:
+
+Launch BMSE and type your key "OFF", then press return key.
+
+Meaningless information:
+
+*** STOP: 0x88710572 (0xASDFFDSA,0x00004126,0xD0SUK01,0xÅõ0Å§0Åõ)
+
+
+***  BMSE.EXE - Public Sub DrawBlueScreen() at modEasterEgg.mod, DateStamp 2006-12-26
+
+
+
+
+
+"A problem has been detected and BMSE has been shut down to prevent damage to your mind." & vbcrlf & vbcrlf & _
+"The problem seems to be caused by the following file: BMSE.EXE" & vbcrlf & vbcrlf & _
+"EASTER_EGG_BLUE_SCREEN_OF_DEATH" & vbcrlf & vbcrlf & _
+"If this is the first time you've seen this stop error screen, restart your BMSE. If this screen appears again, follow these steps:" & vbcrlf & vbcrlf & _
+"1) Bury me from your computer." & vbcrlf & _
+"2) Access UCN-Soft BBS, and write your shout of spirit." & vbcrlf & _
+"       ex) ""BMSE is the worst software in the world!!!!!!!!!!!!!!111111""" & vbcrlf & _
+"3) Sing ""asdf song"":" & vbcrlf & _
+"       This is the sound of the asdf song." & vbcrlf & _
+"       asdf fdsa" & vbcrlf & _
+"       asdffdsa ye-ye" & vbcrlf & _
+"       (clap clap clap)" & vbcrlf & _
+"4) Throw your computer from window." & vbcrlf & vbcrlf & _
+"If you are satiated with joke:" & vbcrlf & vbcrlf & _
+"Launch BMSE and type your key ""OFF"", then press return key." & vbcrlf & vbcrlf & _
+"Meaningless information:" & vbcrlf & vbcrlf & _
+"*** STOP: 0x88710572 (0xASDFFDSA,0x00004126,0xD0SUK01,0xÅõ0Å§0Åõ)" & vbcrlf & vbcrlf & vbcrlf & _
+"***  BMSE.EXE - Public Sub DrawBlueScreen() at modEasterEgg.mod, DateStamp 2006-12-26", _

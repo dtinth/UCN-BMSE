@@ -1,0 +1,123 @@
+BMx Sequence Editor
+
+<version>
+
+Staff Credit
+
+
+
+
+
+-Program-
+
+Hayana
+(aka tokonats)
+
+
+
+-Program Icon, Toolbar Icon, BMSE Image-
+
+AOiRO_Manbow
+
+
+
+-Technical Adviser-
+
+aska sakurano
+
+
+
+-Language File Support-
+
+Aruhito
+sfmddrex
+MW
+
+
+
+-Tips Writing-
+
+sfmddrex
+Aruhito
+
+
+
+-siromaru Animation-
+
+tutidama
+ÅúÅ•Åú
+
+
+
+-Easter Egg Adviser-
+
+shammy
+sfmddrex
+Aruhito
+Lai
+Yamajet
+AOiRO_Manbow
+
+
+
+-Programming Assistant-
+
+Coca-Cola Classic
+
+
+
+-Special Thanks-
+
+tix
+J.T.
+
+Shunsuke Kudo
+(aka OBONO)
+
+
+
+-Special "NO" Thanks-
+
+FontSize Property
+FontBold Property
+FontItalic Property
+FontName Property
+FontStrikethru Property
+FontUnderline Property
+
+TabStrip Control
+SSTab Control
+
+PictureBox.MouseUp
+PictureBox.MouseMove
+PictureBox.MouseDown
+
+Microsoft Visual Basic 6.0
+(Oh No, I Love Her!)
+
+tokonats
+
+
+
+-Debugger-
+
+All BMSE Users:)
+
+
+
+
+
+Copyright(C) Hayana/UCN-Soft 2004-2006.
+http://ucn.tokonats.net/
+ucn@tokonats.net
+
+
+
+
+
+
+
+
+
+
+"HAVE YOU FORGOTTEN SOMETHING?"

@@ -1,0 +1,191 @@
+BMSE 検定
+http://b-bmse-1.bom-ba-ye.com/
+
+
+
+BMSE は何というソフトで作られている？
+Microsoft Visual Basic 6.0 SP6
+Microsoft Visual Basic 6.0
+Microsoft Visual Basic 6.0 SP1
+Microsoft Visual Basic 6.0 SP2
+Microsoft Visual Basic 6.0 SP3
+Microsoft Visual Basic 6.0 SP4
+Microsoft Visual Basic 6.0 SP5
+Microsoft Visual Basic 6.0 SP7
+Microsoft Visual Basic 6.0 SP8
+Microsoft Visual Basic 6.0 SP9
+Microsoft Visual Basic 6.0 SP10
+
+
+
+BMSE には多くの隠しコマンドが存在するが、以下のうち実際には存在しないものはどれ？
+AUTOSAVE
+LOG
+STAFFROLL2
+SIROMARU
+TIPS
+
+
+
+開発中に一度は実装されたが、諸々の理由により削除されたものは次のうちどれ？
+ラスタスクロール
+自動譜面作成
+オートソフラン
+#RANDOM 対応
+MIDI → BMS 変換
+
+
+
+名言「cannot undo this」を最初に言い出したのは誰？
+桜乃明日華
+AOiRO_Manbow
+Aruhito
+Hayana
+sfmddrex
+
+
+
+イースターエッグの一つ、TIPS が初めて実装されたのはどのバージョン？
+1.0.0
+Beta 8
+1.1.0
+1.2.0
+1.3.0
+
+
+
+TIPSが初めて実装された時、その数はいくつだった？
+32
+24
+28
+36
+40
+
+
+
+BMSE で「永遠にまだ」といえば何を指す？
+beta 14
+アンドゥ・リドゥ機能
+イースターエッグ
+パッケージ版
+マウマニ対応
+
+
+
+次のウィンドウのうち、イースターエッグが実装されているのはどれ？
+バージョン情報
+検索・削除・置換
+BGA プレビュー
+ビューワ設定
+入力フォーム
+
+
+
+メインウィンドウでおもむろに F10 キーを押すと何が起こる？
+sirodius.exe の起動を試みる
+BMSE がクラッシュする
+http://www.killertomatoes.com/ を開く
+表示が左右逆転する
+TIPS が表示される
+
+
+
+TIPS の「よくわからない時は～」の例として書かれていないのは次のうちどれ？
+#PLAYLEVEL 38
+#GENRE Techno
+#TITLE 4:33
+#ARTIST DJ (苗字)
+#BPM 400
+#RANK 0
+#TOTAL (ノート数÷100)
+#VOLWAV 0
+
+
+
+TIPS を出現させるための正しいコマンドは次のうちどれ？
+#TOTAL に「10572」と入力後、Enter キーを押して再起動
+Ctrl キーを押しながら起動する
+メインウィンドウでおもむろに F10 キーを押す
+ポーズして ↑↑↓↓←→←→AB と入力
+コントローラを持ちプレステ本体を振り回す
+
+
+
+アリス収録の「BMSE」という曲は何曲目？
+36
+32
+24
+28
+40
+
+
+
+スタッフロールの最後に現れる "HAVE YOU FORGOTTEN SOMETHING?" というメッセージの元ネタは何？
+Wizardry IV -The Return Of Werdna-
+beatmania IIDX 9th style
+Attack Of The Killer Tomatoes
+Steve Jobs の基調講演
+モノポリー
+
+
+
+BMSE の Beta 1 と 1.0.0 は、どちらもあるイベントの直前に公開されているが、それは何？
+コミックマーケット
+BMS OF FIGHTERS
+FUJI ROCK FESTIVAL
+センター試験
+ル・マン24時間レース
+
+
+
+BMSE の機能の一つ、テーマファイルを考案したのは誰？
+Is-m
+908
+off-beat
+Yamajet
+yusuke
+
+
+
+ある条件を満たしている時に F9 キーを押すとイースターエッグが発動するが、ある条件とは？
+#GENRE と #ARTIST が空欄
+BMSE を起動してから60秒以内
+オブジェを一つも置いていない
+#WAV の定義を全て埋める
+起動回数が100回を越えている
+
+
+
+BMSE 1.3.3 のソースコードの総容量 (*.frm と *.bas の合計) はおよそどれくらい？
+500 KB
+100 KB
+200 KB
+300 KB
+400 KB
+
+
+
+スタッフロールの「(Oh No, I Love Her!)」という表記の元ネタとなった曲は？
+Dreadlock Holiday (10CC)
+Caroline, No (Brian Wilson)
+Wish You Were Here (Pink Floyd)
+The Mayor Of Simpleton (XTC)
+Love Can Go The Distance (山下達郎)
+
+
+
+人を食ったような TIPS の文章、主に考えたのは誰？
+sfmddrex
+AOiRO_Manbow
+Aruhito
+Hayana
+桜乃明日華
+
+
+
+ボーナス問題！BMSE って何の略だっけ？
+BMS Editor
+BMx Sequence Editor
+Be-Music Sequence Editor
+Beat Mania Sequence Editor
+Bokuha Mainichi Sabishiku Eroge

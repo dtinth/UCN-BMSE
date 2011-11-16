@@ -1,0 +1,22 @@
+Dim i       As Long
+Dim objCtl  As Object
+
+For i = 0 To Forms.Count - 1
+
+    Forms(i).Font.Name = 任意のフォント
+    Forms(i).Font.Charset = 基本的に1を指定しておけばOK・・・のはず
+    
+    For Each objCtl In Forms(i).Controls
+    
+        If TypeOf objCtl Is Label Or TypeOf objCtl Is TextBox Or TypeOf objCtl Is ComboBox Or TypeOf objCtl Is CommandButton Or TypeOf objCtl Is OptionButton Or TypeOf objCtl Is ListBox Or TypeOf objCtl Is PictureBox Or TypeOf objCtl Is CheckBox Then
+        
+            objCtl.Font.Name = 上に同じ
+            objCtl.Font.Charset = 上に同じ
+        
+        End If
+    
+    Next objCtl
+
+Next i
+
+注意：Formsコレクションは既にロードされたフォームしか格納されないので、先にLoadステートメントなどでロードしておく必要がある
